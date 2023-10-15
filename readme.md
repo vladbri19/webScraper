@@ -1,8 +1,9 @@
 DOCUMENTATION:
-1) Start by installing all the required libraries using: npm install puppeteer express
-2) Run npm run start in the terminal. 
-3) Access on your browser http://localhost:4000
-4) Enter the desired url that you want to scrape.
+1) Start by writing in the terminal npm init
+2) Install all the required libraries using: npm install puppeteer express
+3) Run npm run start in the terminal. 
+4) Access on your browser http://localhost:4000
+5) Enter the desired url that you want to scrape.
 
 EXPLANATION:
 As I began researching the best approach to accomplish the scraping tasks, I realized that Puppeteer, a Node.js library that offers a high-level API for controlling and automating headless Chrome, would be the most suitable option. Puppeteer is particularly well-suited for scraping and crawling projects.
