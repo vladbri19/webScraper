@@ -1,0 +1,88 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Scraper</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 400px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .code {
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+        .data-box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            background-color: #f7f7f7;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+<h1>Web Scraper</h1>
+<form action="/scrape" method="post">
+    <label for="url">Enter URL to scrape:</label>
+    <input type="text" id="url" name="url" required>
+    <input type="submit" value="Scrape">
+</form>
+<div class="data-box">
+    <pre class ="code"><code>
+        <% if (value !== '') { %>
+                [
+                <% value.forEach(function(post, index, array) { %>
+                    {
+                    "title": "<%= post.title %>",
+                    "short_description": "<%= post.short_description %>",
+                    "url": "<%= post.url %>",
+                    "author_images": "<%= post.author_images %>",
+                    "words": <%= post.words %>,
+                    "sentiment": "<%= post.sentiment %>"
+                    }
+                ]
+            <% })}; %>
+
+    </code></pre>
+</div>
+
+</body>
+</html>
